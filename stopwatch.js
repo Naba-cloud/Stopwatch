@@ -1,12 +1,17 @@
-// setInterval(function(){console.log('hello')},1000);
-var hour=0;
-var sec=0;
-var min=0;
 var a;
+var hour,sec,min;
+hour=0;
+  sec=0;
+  min=0;
 function hello()
 {
+  
+  
+  // var a;
 a=window.setInterval(function()
 {
+  
+
     sec++;
     // console.log(sec);
     if(sec/60==1)
@@ -21,22 +26,36 @@ a=window.setInterval(function()
       }
      // console.log(hour);
     }
-    document.getElementById('display').textContent=hour +" "+min+ " "+sec;
    
-    
+   
+    document.getElementById('display').textContent=hour +" "+min+ " "+sec;
 },1000)
+
+  document.getElementById('btn').disabled=true;
+
 }
 
 function stp()
   {
+    
     clearTimeout(a);
-
+    document.getElementById('btn').disabled=false;
 
   }
   function reset()
 
   {
-    document.getElementById('display').textContent="00 :" + "00 :" + "00";
-  }
+    min=0;
+    sec=0;
+    hour=0;
+    
+    
 
- 
+    document.getElementById('display').textContent="0"+hour+ " "+ "0"+min+ " "+"0"+sec;
+    stp();
+    document.getElementById('btn').disabled=false;
+   
+   
+  
+
+  }
